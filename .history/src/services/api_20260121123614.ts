@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: process.cwd().includes("localhost")
-    ? "https://work-agency-server.onrender.com/api/v1"
+    ? "http://localhost:5000/api/v1"
     : "https://work-agency-server.onrender.com/api/v1",
 
   timeout: 10000,
