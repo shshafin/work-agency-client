@@ -43,34 +43,26 @@ const Navbar = () => {
   const handleLanguageChange = (newLang: string) => {
     if (typeof window === "undefined") return;
 
-    const lowerLang = newLang.toLowerCase();
-    setLang(lowerLang);
-    localStorage.setItem("selectedLanguage", lowerLang);
+    setLang(newLang);
+    localStorage.setItem("selectedLanguage", newLang);
 
-    // ১. ডোমেইন লজিক: নেটলিফাই বা কাস্টম ডোমেইনের জন্য ডট (.) সহ ডোমেইন নেওয়া
-    const hostname = window.location.hostname;
-    const cookieDomain =
-      hostname === "localhost"
-        ? ""
-        : `; domain=.${hostname.replace(/^www\./, "")}`;
+    // ১. কুকি সেট করা
+    window.document.cookie = `googtrans=/en/${newLang.toLowerCase()}; path=/;`;
+    window.document.cookie = `googtrans=/en/${newLang.toLowerCase()}; path=/; domain=${window.location.hostname};`;
 
-    // ২. কুকি সেট করা (একাধিক ফরমেটে দিচ্ছি যাতে নেটলিফাই মিস না করে)
-    document.cookie = `googtrans=/en/${lowerLang}; path=/;${cookieDomain}`;
-    document.cookie = `googtrans=/en/${lowerLang}; path=/;`; // Fallback for all paths
-
-    // ৩. গুগল কম্বো বক্স আপডেট করা
+    // ২. গুগল কম্বো বক্স আপডেট
     const select = document.querySelector(
       ".goog-te-combo",
     ) as HTMLSelectElement;
     if (select) {
-      select.value = lowerLang;
+      select.value = newLang.toLowerCase();
       select.dispatchEvent(new Event("change"));
     }
 
-    // ৪. হার্ড রিফ্রেশ (নেটলিফাইতে কুকি প্রসেস হওয়ার জন্য ৩০০ms ডিলে দেওয়া ভালো)
+    // ৩. হার্ড রিফ্রেশ
     setTimeout(() => {
       window.location.reload();
-    }, 300);
+    }, 100);
   };
 
   return (

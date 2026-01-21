@@ -137,7 +137,7 @@ const Navbar = () => {
             />
             <span className="uppercase">{lang}</span>
             <ChevronDown size={14} />
-            <div className="absolute top-full right-0 mt-2 w-32 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden p-1 z-100">
+            <div className="absolute top-full right-0 mt-2 w-32 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden p-1 z-[100]">
               {[
                 { code: "en", name: "English" },
                 { code: "pt", name: "Português" },
