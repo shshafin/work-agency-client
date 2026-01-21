@@ -8,7 +8,7 @@
 [build.environment]
   NODE_VERSION = "20"
 
-
+# গুগলের স্ক্রিপ্টগুলো যাতে নেটলিফাই ব্লক না করে তার জন্য হেডারে পারমিশন দেওয়া হচ্ছে
 [[headers]]
   for = "/*"
   [headers.values]

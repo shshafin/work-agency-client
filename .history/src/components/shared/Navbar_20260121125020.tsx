@@ -140,7 +140,7 @@ const Navbar = () => {
             />
             <span className="uppercase">{lang}</span>
             <ChevronDown size={14} />
-            <div className="absolute top-full right-0 mt-2 w-32 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden p-1 z-100">
+            <div className="absolute top-full right-0 mt-2 w-32 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden p-1 z-[100]">
               {[
                 { code: "en", name: "English" },
                 { code: "pt", name: "Português" },
@@ -170,7 +170,7 @@ const Navbar = () => {
                 className="bg-brand-blue text-white px-6 py-3 rounded-full text-sm font-black flex items-center gap-2 hover:bg-brand-yellow hover:text-brand-blue transition-all">
                 <LayoutDashboard size={18} /> Dashboard
               </Link>
-              <div className="absolute top-full right-0 mt-2 w-48 bg-white shadow-2xl rounded-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-2 z-100">
+              <div className="absolute top-full right-0 mt-2 w-48 bg-white shadow-2xl rounded-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-2 z-[100]">
                 <p className="px-4 py-2 text-[10px] font-black text-gray-400 uppercase tracking-widest border-b border-gray-50 mb-1">
                   Account
                 </p>
